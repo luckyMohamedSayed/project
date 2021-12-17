@@ -1,0 +1,13 @@
+C51 COMPILER V9.60.0.0   TRY                                                               10/15/2021 13:34:18 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE TRY
+OBJECT MODULE PLACED IN .\Objects\try.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE ..\try.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\tr
+                    -y.lst) TABS(2) OBJECT(.\Objects\try.obj)
+
+line level    source
+
+*** ERROR C318 OF ..\try.c: can't open file '..\try.c'
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  1 ERROR(S)

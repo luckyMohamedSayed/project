@@ -1,0 +1,62 @@
+C51 COMPILER V9.60.0.0   READ_AND_WRITE_SAME_PORT                                          10/15/2021 16:45:18 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE READ_AND_WRITE_SAME_PORT
+OBJECT MODULE PLACED IN .\Objects\read_and_write_SaMe_PORT.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE read_and_write_SaMe_PORT.C OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND P
+                    -RINT(.\Listings\read_and_write_SaMe_PORT.lst) TABS(2) OBJECT(.\Objects\read_and_write_SaMe_PORT.obj)
+
+line level    source
+
+   1          #include<reg52.h>
+   2          void write_PIN_P1(const unsigned char,const bit );
+   3          bit read_PIN_P1(const unsigned char);
+   4          void main (void)
+   5          {
+   6   1      bit x;
+   7   1      while (1)
+   8   1      {
+   9   2      x= read_PIN_P1(0);
+  10   2      write_PIN_P1(1,x);
+  11   2      }
+  12   1      }
+  13          void write_PIN_P1(unsigned char PIN,const bit VALUE)
+  14          {
+  15   1      unsigned char p=0x01;
+  16   1      p<<=PIN;
+  17   1      if(VALUE==1)
+  18   1      {
+  19   2      P1|=p;
+  20   2        return;
+  21   2      }
+  22   1      p=~p;
+  23   1      P1&=p;
+  24   1      }
+  25          bit read_PIN_P1(unsigned char PIN)
+  26          {
+  27   1      unsigned char p=0x01;
+  28   1      p<<=PIN;
+  29   1      write_PIN_P1(PIN ,1 );
+  30   1      return(P1&p);
+  31   1      }
+  32          
+  33          
+  34          
+  35          
+  36          
+  37          
+  38          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     68    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----       2
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

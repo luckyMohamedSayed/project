@@ -1,0 +1,140 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    10/14/2021  10:01:19  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\buzzer.obj, .\Objects\starting_flash_leed.obj TO .\Objects\buzzer PRINT (.\Listing
+>> s\buzzer.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\buzzer.obj (BUZZER)
+  .\Objects\starting_flash_leed.obj (STARTING_FLASH_LEED)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  .\Objects\buzzer (BUZZER)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+                    0008H     0018H                  *** GAP ***
+            BIT     0020H.0   0000H.1   UNIT         ?BI?BUZZER
+                    0020H.1   0000H.7                *** GAP ***
+            IDATA   0021H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     0020H     UNIT         ?PR?_DELAY_WAIT?BUZZER
+            CODE    0820H     000FH     UNIT         ?PR?MAIN?BUZZER
+            CODE    082FH     000DH     UNIT         ?PR?CHANGING_LED_STATE?BUZZER
+            CODE    083CH     000CH     UNIT         ?C_C51STARTUP
+            CODE    0848H     0003H     UNIT         ?PR?INIT_LED?BUZZER
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\buzzer (BUZZER)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?BUZZER
+
+?PR?MAIN?BUZZER
+  +--> ?PR?INIT_LED?BUZZER
+  +--> ?PR?CHANGING_LED_STATE?BUZZER
+  +--> ?PR?_DELAY_WAIT?BUZZER
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\buzzer (BUZZER)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  10/14/2021  10:01:19  PAGE 2
+
+
+
+  -------         MODULE        BUZZER
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  B:0090H.5       PUBLIC        pin_LED
+  C:082FH         PUBLIC        changing_LED_state
+  D:0090H         PUBLIC        P1
+  B:0020H.0       PUBLIC        state_LED_G
+  D:00B0H         PUBLIC        P3
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+  C:0820H         PUBLIC        main
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  C:0848H         PUBLIC        Init_LED
+  D:00C8H         PUBLIC        T2CON
+  C:0800H         PUBLIC        _DElay_wait
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          MAIN
+  C:0820H         LINE#         11
+  C:0820H         LINE#         12
+  C:0820H         LINE#         13
+  C:0823H         LINE#         15
+  C:0823H         LINE#         16
+  C:0823H         LINE#         17
+  C:0826H         LINE#         18
+  C:082DH         LINE#         19
+  -------         ENDPROC       MAIN
+  -------         PROC          INIT_LED
+  C:0848H         LINE#         24
+  C:0848H         LINE#         25
+  C:0848H         LINE#         26
+  C:084AH         LINE#         27
+  -------         ENDPROC       INIT_LED
+  -------         PROC          CHANGING_LED_STATE
+  C:082FH         LINE#         29
+  C:082FH         LINE#         30
+  C:082FH         LINE#         31
+  C:0832H         LINE#         32
+  C:0832H         LINE#         34
+  C:0834H         LINE#         35
+  C:0836H         LINE#         36
+  C:0837H         LINE#         38
+  C:0837H         LINE#         39
+  C:0839H         LINE#         40
+  C:083BH         LINE#         41
+  C:083BH         LINE#         42
+  -------         ENDPROC       CHANGING_LED_STATE
+  -------         PROC          _DELAY_WAIT
+  D:0006H         SYMBOL        DELAY
+  -------         DO            
+  D:0004H         SYMBOL        x
+  D:0002H         SYMBOL        y
+  -------         ENDDO         
+  C:0800H         LINE#         45
+  C:0800H         LINE#         46
+  C:0800H         LINE#         48
+  C:080AH         LINE#         49
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  10/14/2021  10:01:19  PAGE 3
+
+
+  C:080AH         LINE#         50
+  C:0818H         LINE#         51
+  C:081FH         LINE#         52
+  -------         ENDPROC       _DELAY_WAIT
+  -------         ENDMOD        BUZZER
+
+  -------         MODULE        STARTING_FLASH_LEED
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  -------         ENDMOD        STARTING_FLASH_LEED
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 003FH BYTE ( 3%) *
+******************************************************************************
+
+Program Size: data=9.1 xdata=0 code=78
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

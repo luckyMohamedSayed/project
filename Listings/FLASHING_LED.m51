@@ -1,0 +1,135 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    10/15/2021  17:27:18  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\FLASHING_LED_PIN.obj TO .\Objects\FLASHING_LED PRINT (.\Listings\FLASHING_LED.m51)
+>>  RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\FLASHING_LED_PIN.obj (FLASHING_LED_PIN)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  .\Objects\FLASHING_LED (FLASHING_LED_PIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+                    0008H     0018H                  *** GAP ***
+            BIT     0020H.0   0000H.1   UNIT         ?BI?FLASHING_LED_PIN
+                    0020H.1   0000H.7                *** GAP ***
+            IDATA   0021H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     0020H     UNIT         ?PR?_DELAY_WAIT?FLASHING_LED_PIN
+            CODE    0820H     000FH     UNIT         ?PR?MAIN?FLASHING_LED_PIN
+            CODE    082FH     000DH     UNIT         ?PR?CHANGING_STATE?FLASHING_LED_PIN
+            CODE    083CH     000CH     UNIT         ?C_C51STARTUP
+            CODE    0848H     0003H     UNIT         ?PR?LED_INIT?FLASHING_LED_PIN
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\FLASHING_LED (FLASHING_LED_PIN)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?FLASHING_LED_PIN
+
+?PR?MAIN?FLASHING_LED_PIN
+  +--> ?PR?LED_INIT?FLASHING_LED_PIN
+  +--> ?PR?CHANGING_STATE?FLASHING_LED_PIN
+  +--> ?PR?_DELAY_WAIT?FLASHING_LED_PIN
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\FLASHING_LED (FLASHING_LED_PIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  10/15/2021  17:27:18  PAGE 2
+
+
+  -------         MODULE        FLASHING_LED_PIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00B0H         PUBLIC        P3
+  C:0800H         PUBLIC        _DELAY_wait
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+  B:0090H.5       PUBLIC        LED_PIN
+  C:0820H         PUBLIC        main
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  C:082FH         PUBLIC        changing_state
+  C:0848H         PUBLIC        LED_Init
+  B:0020H.0       PUBLIC        LED_state
+  D:00C8H         PUBLIC        T2CON
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          MAIN
+  C:0820H         LINE#         8
+  C:0820H         LINE#         9
+  C:0820H         LINE#         10
+  C:0823H         LINE#         11
+  C:0823H         LINE#         12
+  C:0823H         LINE#         13
+  C:0826H         LINE#         14
+  C:082DH         LINE#         15
+  -------         ENDPROC       MAIN
+  -------         PROC          LED_INIT
+  C:0848H         LINE#         17
+  C:0848H         LINE#         18
+  C:0848H         LINE#         19
+  C:084AH         LINE#         20
+  -------         ENDPROC       LED_INIT
+  -------         PROC          CHANGING_STATE
+  C:082FH         LINE#         21
+  C:082FH         LINE#         22
+  C:082FH         LINE#         23
+  C:0832H         LINE#         24
+  C:0832H         LINE#         25
+  C:0834H         LINE#         26
+  C:0836H         LINE#         27
+  C:0837H         LINE#         29
+  C:0837H         LINE#         30
+  C:0839H         LINE#         31
+  C:083BH         LINE#         32
+  C:083BH         LINE#         33
+  -------         ENDPROC       CHANGING_STATE
+  -------         PROC          _DELAY_WAIT
+  D:0006H         SYMBOL        DELAY
+  -------         DO            
+  D:0004H         SYMBOL        x
+  D:0002H         SYMBOL        y
+  -------         ENDDO         
+  C:0800H         LINE#         34
+  C:0800H         LINE#         35
+  C:0800H         LINE#         37
+  C:080AH         LINE#         38
+  C:080AH         LINE#         39
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  10/15/2021  17:27:18  PAGE 3
+
+
+  C:0818H         LINE#         40
+  C:081FH         LINE#         41
+  -------         ENDPROC       _DELAY_WAIT
+  -------         ENDMOD        FLASHING_LED_PIN
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 003FH BYTE ( 3%) *
+******************************************************************************
+
+Program Size: data=9.1 xdata=0 code=78
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

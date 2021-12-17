@@ -1,0 +1,4 @@
+".\Objects\buzzer.obj",
+".\Objects\starting_flash_leed.obj" 
+TO ".\Objects\buzzer" 
+PRINT(".\Listings\buzzer.m51") RAMSIZE(256) 

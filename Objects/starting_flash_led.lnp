@@ -1,0 +1,3 @@
+".\Objects\starting_flash_leed.obj" 
+TO ".\Objects\starting_flash_led" 
+PRINT(".\Listings\starting_flash_led.m51") RAMSIZE(256) 

@@ -1,0 +1,3 @@
+".\Objects\FLASHING_LED_PIN.obj" 
+TO ".\Objects\FLASHING_LED" 
+PRINT(".\Listings\FLASHING_LED.m51") RAMSIZE(256) 
